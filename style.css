@@ -1,8 +1,8 @@
 body{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    
     padding: 50px;
 }
 .container{
@@ -10,7 +10,8 @@ body{
     border: 2px solid black;
     padding: 10px;
     width: 270px;
-    height: 280px;
+    height: fit-content;
+    max-height: 350px;
 }
 
 .container h1{
@@ -37,3 +38,12 @@ ul{
     margin-bottom: 20px;
 }
 
+#result {
+    text-decoration: underline;
+}
+
+/* @media(min-width=600px){
+    .container{
+        height: ;
+    }
+} */
