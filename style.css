@@ -10,20 +10,30 @@ body{
     border: 2px solid black;
     padding: 10px;
     width: 270px;
-    height: 200px;
+    height: 280px;
 }
 
+.container h1{
+    text-align: center;
+    margin-top: 0;
+    text-decoration: underline;
+}
 .container p{
     text-align: center;
     font-weight: bold;
 }
 
 .container button{
+    
     position: absolute;
-    left: 40%;
+    left: 30%;
     bottom: 10px;
+    height: 30px;
+    width: 90px;
 }
 
-li{
+ul{
     list-style: none;
+    margin-bottom: 20px;
 }
+
