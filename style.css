@@ -1,41 +1,55 @@
-body{
+body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 50px;
 }
-.container{
-    position: relative;
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-start; /* Start content from the top */
+    align-items: center; /* Center items horizontally */
     border: 2px solid black;
     padding: 10px;
     width: 270px;
-    height: fit-content;
     max-height: 500px;
+    overflow-y: auto; /* Add scroll if content exceeds the height */
 }
 
-.container h1{
+.container h1 {
     text-align: center;
     margin-top: 0;
     text-decoration: underline;
 }
-.container p{
+.container hr{
+    
+    width: 250px;
+}
+.container p {
     text-align: center;
     font-weight: bold;
 }
 
-.container button{
-    
-    position: absolute;
-    left: 30%;
-    bottom: 10px;
-    height: 30px;
-    width: 90px;
-}
-
-ul{
+ul {
     list-style: none;
     margin-bottom: 20px;
+    padding: 0;
+    width: 100%; /* Ensure options span full width */
+}
+
+ul li {
+    
+    margin: 5px 0;
+}
+
+.container button {
+    margin-top: 20px; /* Add space above the buttons */
+    height: 40px;
+    width: 120px;
+    display: block;
+    text-align: center;
 }
 
 #result {
@@ -44,8 +58,17 @@ ul{
 
 @media (max-width: 480px) {
     .container {
-        max-height: none; /* Allow height to expand fully on smaller screens */
-        width: 100%; /* Adjust the width to fit the screen */
-        padding: 5px; /* Reduce padding for smaller screens */
+        width: 90%; /* Fit container to screen width */
+        padding: 5px;
+        max-height: 90vh; /* Use relative height for better scaling */
+    }
+
+    .container button {
+        width: 80%; /* Buttons expand for better tap area */
+        font-size: 16px;
+    }
+
+    ul {
+        margin-bottom: 10px;
     }
 }
