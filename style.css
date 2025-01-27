@@ -42,8 +42,9 @@ ul{
     text-decoration: underline;
 }
 
-/* @media(min-width=600px){
+@media(min-width=600px){
     .container{
-        height: ;
+        height: fit-content;
+        max-height: 350px;
     }
-} */
+}

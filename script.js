@@ -1,5 +1,6 @@
 const queElement = document.querySelector("p");
 const optionContainer = document.querySelector(".option");
+const scoreEle = document.querySelector("#result span");
 const submitBtn = document.querySelector("#submit");
 const nextBtn = document.querySelector("#next");
 
@@ -48,6 +49,9 @@ submitBtn.addEventListener("click",()=>{
         score++;
     }
 
+    if(submitCount === total){
+        scoreEle.textContent = `${score}/${total}`;
+    }
     submitBtn.disabled = true; // Disable submit button
     nextBtn.disabled = false; // Enable next button
     nextBtn.style.display = "inline-block";
@@ -59,14 +63,17 @@ nextBtn.addEventListener("click",() =>{
     currentQuestionIndex++;
 
     if(submitCount === total){
-        alert(`Quiz Finished! Your Score is ${score}/${total}`);
+        //quiz reset 
         score =0;
         currentQuestionIndex=0;
         submitCount=0;
+        scoreEle.textContent = "";
+
         renderQuestion();
     }
     
     else{
+        //next question
         renderQuestion();
     }
 });
